@@ -12,3 +12,16 @@ A simple HTTP API which consumes [owner-producer-service](https://github.com/nar
 
 		
 * GET `/owner-producer/get/<id>/` : Calls 	`/owner-consumer/get/<id>/` to prepare response
+
+## Compilation
+
+Use maven.
+
+    $ mvn clean install
+
+## Deploy to PCF
+
+    $ cf login -a api.run.pivotal.io
+    $ cf push
+    $ cf apps
+
