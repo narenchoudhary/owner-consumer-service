@@ -12,8 +12,6 @@ server:
 eureka:
   instance:
     hostname: localhost
-    nonSecurePort: 80
-    nonSecurePortEnabled: true
   client:
     serviceUrl:
       fetchRegistry: true
