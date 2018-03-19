@@ -11,11 +11,11 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${vcap.application.uris[0]:service-registration-service}
   client:
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${vcap.services.service-registration-service.credentials.uri}/eureka/
  
 owner-producer-service:
   ribbon:
