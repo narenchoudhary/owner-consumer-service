@@ -1,0 +1,20 @@
+applications:
+  # application name is required
+- name: owner-consumer-service
+  host: owner-consumer-service
+  # the memory limit for all instances of the application
+  memory: 512M
+  # allocate the disk space for an application instance
+  disk_quota: 256M
+  # number of application instances
+  instances: 1
+  # the directory location of application
+  path: target/owner-consumer-service-0.0.1-SNAPSHOT.jar
+  # specify a custom buildpack
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v3.14
+  # which stack to deploy application to
+  stack: cflinuxfs2
+  # the number of seconds that Cloud Foundry allocates for starting application
+  timeout: 90
+  services:
+    - service-registration-service
